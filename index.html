@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Panel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+    <link rel="icon" type="image/svg+xml" href="https://support-platform.ddns.net/favicon.svg?ver=20231218" sizes="any">
+    <!-- ------------------------------------------------------------ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://support-platform.ddns.net/Layout/Assets/icons-pwa/apple-touch-icon.png?ver=20231218">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://support-platform.ddns.net/Layout/Assets/icons-pwa/favicon-32x32.png?ver=20231218">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://support-platform.ddns.net/Layout/Assets/icons-pwa/favicon-16x16.png?ver=20231218">
+    <link rel="icon" type="image/svg+xml" href="https://support-platform.ddns.net/favicon.svg?ver=1.0" sizes="any">
+    <link rel="manifest" href="https://support-platform.ddns.net/site.webmanifest">
+    <link rel="mask-icon" href="https://support-platform.ddns.net/Layout/Assets/icons-pwa/safari-pinned-tab.svg?ver=20231218" color="#5bbad5">
+    <link rel="shortcut icon" href="https://support-platform.ddns.net/Layout/Assets/icons-pwa/favicon.ico?ver=20231218">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="https://support-platform.ddns.net/Layout/Assets/icons-pwa/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link rel="stylesheet" type="text/css" href="https://support-platform.ddns.net/Core/Views/Index/Assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://support-platform.ddns.net/Layout/default/css/default.css?ver=20231218">
+
+    <style>
+        .text-databasename {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            font-size: 0.9rem;
+            width: 100%;
+            text-align: right;
+            z-index: 999;
+            color: #222;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVLVRZ6LVS"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BVLVRZ6LVS');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <!--Content before waves-->
+        <div class="inner-header flex">
+            
+
+
+            <h1 class="title-brand">
+                <img src="https://support-platform.ddns.net/favicon.svg?ver=20231218" style="width: 100%;max-width:200px; margin: 0 auto;" />
+                <br/>
+                iKapitol MIB
+
+                <form method="POST" action="Index/Start" accept-charset="UTF-8" class="form-signin" data-parsley-validate="data-parsley-validate">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="g-recaptcha" data-sitekey="6LfaHTkpAAAAAC_jNqmT5xe8xxji0PAOGwetRfpB"></div>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <input name="csrf_token" type="hidden" value="QnvY71Ttre79agO3">
+                    <div class="form-group has-feedback">
+                        <input class="form-control" placeholder="Cuenta de correo" required="required" id="username"
+                            data-parsley-required-message="El correo es requerido"
+                            data-parsley-trigger="change focusout" data-parsley-type="email" name="username"
+                            type="email" value="">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input class="form-control" placeholder="Contrase&ntilde;a" required="required"
+                            id="inputPassword" data-parsley-required-message="La contrase&ntilde;a es requerida"
+                            data-parsley-trigger="change focusout" data-parsley-minlength="6"
+                            data-parsley-maxlength="20" name="password" type="password" value="">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                                        <div class="row">
+                        <!-- /.col -->
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-block btn-primary btn-lg">Ingresar</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-md-12 text-databasename">
+                            db_KAPITOL
+                        </div>
+                        <!-- /.col -->
+                    </div>
+
+                    <div class="row" style="z-index: 99999;position: relative;">
+                        <div class="col-md-12">
+                            <div class="checkbox icheck">
+                                <label>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </h1>
+
+
+        </div>
+
+        <!--Waves Container-->
+        <div class="waves-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+
+    </div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EVRTEJLX9K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+                dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-EVRTEJLX9K');
+</script>
+
+</body>
+
+</html>
