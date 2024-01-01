@@ -84,7 +84,8 @@
                                         <div class="row">
                         <!-- /.col -->
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-block btn-primary btn-lg" type="submit">Ingresar</button>
+                            <button class="btn btn-block btn-primary btn-lg">Ingresar</button>
+                            <input type="hidden" name="submitlogin" value="" style="display: none;">
                         </div>
                         <!-- /.col -->
                     </div>
@@ -152,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        // Handle the response, e.g., show a success message
+        document.getElementById("loginForm").submit();
         console.log('Form submitted successfully');
       }
     };
